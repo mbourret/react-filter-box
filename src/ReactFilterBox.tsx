@@ -19,7 +19,8 @@ export default class ReactFilterBox extends React.Component<any, any> {
         onDataFiltered: () => { },
         autoCompleteHandler: null,
         onBlur: () => { },
-        onFocus: () => { }
+        onFocus: () => { },
+        placeholder: '',
     };
 
     parser = new FilterQueryParser();
@@ -83,6 +84,7 @@ export default class ReactFilterBox extends React.Component<any, any> {
         return <div className={className}>
             <FilterInput
                 autoCompletePick={this.props.autoCompletePick}
+                placeholder={this.props.placeholder}
                 customRenderCompletionItem={this.props.customRenderCompletionItem}
                 onBlur={this.onBlur.bind(this)}
                 onFocus={this.onFocus.bind(this)}
